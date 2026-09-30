@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Nihaj ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #16001f, #45002f, #8b164e);
+    color: white;
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* Opening */
+#opening {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: radial-gradient(circle, #720044, #18001e);
+    flex-direction: column;
+    transition: 1s;
+}
+
+#opening h1 {
+    font-size: clamp(2rem, 7vw, 4rem);
+    margin-bottom: 20px;
+}
+
+#opening p {
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+}
+
+.open-btn {
+    border: none;
+    padding: 16px 35px;
+    border-radius: 50px;
+    background: #ff4f9a;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(255,79,154,.7);
+    transition: .3s;
+}
+
+.open-btn:hover {
+    transform: scale(1.08);
+}
+
+/* Hero */
+.hero {
+    flex-direction: column;
+    background:
+        radial-gradient(circle at top, rgba(255,100,170,.35), transparent 40%);
+}
+
+.hero h1 {
+    font-size: clamp(2.8rem, 8vw, 6rem);
+    background: linear-gradient(90deg, #fff, #ff9ac8, #fff);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: glow 2s infinite alternate;
+}
+
+.hero h2 {
+    margin-top: 20px;
+    font-size: clamp(1.4rem, 4vw, 2.4rem);
+}
+
+.hero p {
+    max-width: 700px;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 5px #ff4f9a); }
+    to { filter: drop-shadow(0 0 25px #ff9ac8); }
+}
+
+/* Message */
+.message {
+    flex-direction: column;
+}
+
+.card {
+    max-width: 850px;
+    padding: 45px 30px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,.2);
+    box-shadow: 0 20px 60px rgba(0,0,0,.3);
+}
+
+.card h2 {
+    color: #ff9ac8;
+    font-size: 2.3rem;
+    margin-bottom: 25px;
+}
+
+.card p {
+    line-height: 2;
+    font-size: 1.08rem;
+}
+
+/* Photos */
+.memories {
+    flex-direction: column;
+}
+
+.memories h2 {
+    font-size: 2.5rem;
+    margin-bottom: 35px;
+}
+
+.gallery {
+    width: 100%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.photo {
+    height: 280px;
+    border-radius: 25px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff4f9a, #5b164e);
+    border: 2px solid rgba(255,255,255,.25);
+    box-shadow: 0 15px 40px rgba(0,0,0,.3);
+    transition: .4s;
+}
+
+.photo:hover {
+    transform: translateY(-10px) rotate(1deg);
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dua */
+.dua {
+    flex-direction: column;
+}
+
+.dua-card {
+    max-width: 750px;
+    padding: 45px 30px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.2);
+}
+
+.dua-card h2 {
+    font-size: 2.5rem;
+    color: #ffd2e5;
+    margin-bottom: 25px;
+}
+
+.dua-card p {
+    font-size: 1.15rem;
+    line-height: 2;
+}
+
+/* Surprise */
+.surprise {
+    flex-direction: column;
+}
+
+.surprise h2 {
+    font-size: 2.7rem;
+    margin-bottom: 20px;
+}
+
+.reveal-btn {
+    margin-top: 30px;
+    padding: 16px 35px;
+    border: none;
+    border-radius: 50px;
+    background: #ff4f9a;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.hidden-message {
+    max-width: 700px;
+    margin-top: 30px;
+    display: none;
+    font-size: 1.4rem;
+    line-height: 2;
+    color: #ffd7e8;
+}
+
+/* Final */
+.final {
+    flex-direction: column;
+    background: radial-gradient(circle, #7b174d, #18001e);
+}
+
+.final h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+}
+
+.final p {
+    margin-top: 20px;
+    font-size: 1.4rem;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    animation: float 7s linear forwards;
+    pointer-events: none;
+    z-index: 999;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(.8) rotate(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) scale(1.5) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+/* Music button */
+.music-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 500;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    background: #ff4f9a;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255,79,154,.7);
+}
+
+@media(max-width:600px) {
+    .card,
+    .dua-card {
+        padding: 30px 20px;
+    }
+
+    .photo {
+        height: 330px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Opening -->
+<section id="opening">
+    <h1>💌 A Little Surprise...</h1>
+    <p>Someone special made something special for you ❤️</p>
+    <button class="open-btn" onclick="openSurprise()">
+        Open Your Surprise 🎁
+    </button>
+</section>
+
+<!-- Hero -->
+<section class="hero">
+    <h1>Happy Birthday 🎂</h1>
+    <h2>My Love, Nihaj Ahmadh ❤️</h2>
+
+    <p>
+        Today isn't just another day...
+        It's the day someone very special came into this world. ❤️❤️
+    </p>
+</section>
+
+<!-- Message -->
+<section class="message">
+    <div class="card">
+        <h2>💌 A Message From My Heart</h2>
+
+        <p>
+            Happy Birthday to the person who makes my heart smile
+            in ways words can never explain. ❤️
+            <br><br>
+
+            Nihaj, having you in my life is one of the most beautiful
+            gifts Allah has given me. Through every distance, every
+            conversation, every little moment, you have become such
+            a special part of my heart.
+            <br><br>
+
+            Today is your day, but somehow I feel like I'm the lucky
+            one because I get to celebrate you. 💕
+            <br><br>
+
+            May Allah bless you with happiness, good health, success,
+            peace, and everything your heart wishes for.
+            May our future be filled with beautiful memories,
+            laughter, and countless moments together. 🤍
+            <br><br>
+
+            Happy Birthday, my love. ❤️
+            <br><br>
+
+            Always remember that someone named
+            <b>Sameena</b> is praying for you, caring for you,
+            and loving you more than these little words can say. ❤️❤️
+        </p>
+    </div>
+</section>
+
+<!-- Memories -->
+<section class="memories">
+    <h2>📸 Our Beautiful Memories</h2>
+
+    <div class="gallery">
+
+        <!-- Replace these images with your own photos -->
+        <div class="photo">
+            <img src="photo1.jpeg" alt="Our Memory">
+        </div>
+
+        <div class="photo">
+            <img src="photo2.jpeg" alt="Our Memory">
+        </div>
+
+        <div class="photo">
+            <img src="photo3.jpeg" alt="Our Memory">
+        </div>
+
+        <div class="photo">
+            <img src="photo4.jpeg" alt="Our Memory">
+        </div>
+
+    </div>
+</section>
+
+<!-- Dua -->
+<section class="dua">
+    <div class="dua-card">
+        <h2>🌙 My Dua For You</h2>
+
+        <p>
+            May Allah protect you wherever you are. 🤍
+            <br><br>
+
+            May He fill your life with barakah, happiness,
+            success and peace.
+            <br><br>
+
+            May every difficulty become easy,
+            every dream become closer,
+            and every prayer find its beautiful answer.
+            <br><br>
+
+            And may Allah bless our future together
+            with love, understanding, mercy and endless happiness. 🤲🏻❤️
+        </p>
+    </div>
+</section>
+
+<!-- Surprise -->
+<section class="surprise">
+    <h2>🎁 One More Surprise...</h2>
+
+    <p>
+        I have something else I want you to know.
+    </p>
+
+    <button class="reveal-btn" onclick="revealMessage()">
+        Tap Here ❤️
+    </button>
+
+    <div class="hidden-message" id="hiddenMessage">
+        No matter how many birthdays come and go,
+        I hope I get to celebrate many more of them with you. ❤️
+        <br><br>
+
+        Distance may separate us sometimes,
+        but you will always have a special place in my heart.
+        <br><br>
+
+        <b>Happy Birthday, Nihaj ❤️</b>
+        <br>
+        With love, Sameena 🤍
+    </div>
+</section>
+
+<!-- Final -->
+<section class="final">
+    <h1>Forever & Always ❤️</h1>
+    <p>Sameena 🤍 Nihaj</p>
+    <p>Happy Birthday, My Love 🎂✨</p>
+</section>
+
+<!-- Music button -->
+<button class="music-btn" onclick="toggleMusic()" id="musicButton">
+    🎵
+</button>
+
+<audio id="music" loop>
+    <!-- Add your own music file here -->
+    <source src="birthday-song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* Opening animation */
+function openSurprise() {
+    const opening = document.getElementById("opening");
+
+    opening.style.opacity = "0";
+
+    setTimeout(() => {
+        opening.style.display = "none";
+    }, 1000);
+
+    createHearts();
+}
+
+/* Surprise message */
+function revealMessage() {
+    const message = document.getElementById("hiddenMessage");
+
+    if (message.style.display === "block") {
+        message.style.display = "none";
+    } else {
+        message.style.display = "block";
+        createManyHearts();
+    }
+}
+
+/* Music */
+const music = document.getElementById("music");
+const musicButton = document.getElementById("musicButton");
+
+function toggleMusic() {
+
+    if (music.paused) {
+        music.play();
+        musicButton.innerHTML = "🔊";
+    } else {
+        music.pause();
+        musicButton.innerHTML = "🎵";
+    }
+}
+
+/* Floating hearts */
+function createHearts() {
+
+    setInterval(() => {
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        const hearts = ["❤️", "💗", "💕", "💖", "💘", "💞"];
+
+        heart.innerHTML =
+            hearts[Math.floor(Math.random() * hearts.length)];
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+        heart.style.fontSize =
+            (15 + Math.random() * 25) + "px";
+
+        heart.style.animationDuration =
+            (5 + Math.random() * 4) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 9000);
+
+    }, 500);
+}
+
+/* Extra hearts */
+function createManyHearts() {
+
+    for (let i = 0; i < 30; i++) {
+
+        setTimeout(() => {
+
+            const heart = document.createElement("div");
+
+            heart.className = "heart";
+
+            heart.innerHTML = "❤️";
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.fontSize =
+                (20 + Math.random() * 35) + "px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+
+        }, i * 100);
+    }
+}
+
+</script>
+
+</body>
+</html>
